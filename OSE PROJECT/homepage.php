@@ -88,8 +88,6 @@ img{
             <tr class="button1">
                 <th><a href="grantees-portal.php"><button type="button">My Profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 ></a></button></th>
-                <th><a href="percentage.php"><button type="button">My Percentage &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ></a></button></th>
             </tr>
             <tr class="button2">
                 <td><a href="enrollment-sis.php"><button type="button">Enrollment &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
