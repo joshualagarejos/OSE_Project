@@ -17,13 +17,12 @@ body{
     padding-top: 20px;
 }
 .main{
+    display:flex;
     top: 30px;
     background-color: #EDD3A5;
-    height: 400px;
     border-radius: 50px;
     width: 600px;
-    margin-left: 300px;
-    margin-top: 20px;
+    margin: auto;
     padding-top: 70px;
 }
 form{
@@ -53,6 +52,7 @@ button{
     font-size: 30px;
     color: white;
     margin-top: 30px;
+    margin-bottom:30px;
     margin-left: -50px;
 }
 img{
@@ -75,6 +75,8 @@ a{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -87,38 +89,72 @@ a{
     </div>
 
     <div class="main">
-    <form action="registration.php" method="post">
-
+    <form action="process.php" method="POST">
     <table>
+        
+
+        <p id="message" style="color: red;"></p>
         <tbody>
         <tr class="trlastname">
             <th><label for="lastname">Last Name:</label></th>
-            <th><input type="text" name="lastname" id="lastname"></th>
+            <th><input required onError type="text" name="lastname" id="lastname"></th>
         </tr>
         <tr class="trfirstname">
             <td><label for="firstname">First Name:</label></td>
-            <td><input type="text" name="firstname" id="firstname"></td>
+            <td><input required type="text" name="firstname" id="firstname"></td>
+        </tr>
+        <tr class="trno">
+            <td><label for="no">Contact number Name:</label></td>
+            <td><input required type="text" pattern="\d*" maxlength="11" name="no" id="no"></td>
+        </tr>
+        <tr class="trdob">
+            <td><label for="dob">Date of Birth:</label></td>
+            <td><input required max="2016-06-06" type="date" name="dob" id="dob"></td>
         </tr>
         <tr class="tremail">
             <td><label for="email">Email:</label></td>
-            <td><input type="text" name="email" id="email"></td>
+            <td><input required type="email" name="email" id="email"></td>
         </tr>
         <tr class="trpassword">
             <td><label for="password">Password:</label></td>
-            <td><input type="password" name="password" id="password"></td>
+            <td><input required type="password" name="password" id="password" onkeyup="checkPass();"></td>
         </tr>
         <tr class="trconpassword">
             <td><label for="password2">Confirm Password:</label></td>
-            <td><input type="password" name="password" id="password"></td>
+            <td><input required type="password" name="cpassword" id="cpassword" onkeyup="checkPass();"></td>
         </tr>
         </tbody>
     </table>
 
     <div class="submit_button">
-    <a href="login.php"><button type="button">Submit</a></button>
+    <button type="submit" name="sub" id="submit" value="submit">Submit</button>
     </div>
-
+</form>
+<?php
+if  (isset($_GET['event'])){
+    if ($_GET['event']==1){
+        echo "<script>swal('Registration Failed', 'Email is already in use.', 'error');</script>";
+    }
+}
+?>
 </div>
 </body>
-
+<script>
+var checkPass = function() {
+    if (document.getElementById('password').value ==
+        document.getElementById('cpassword').value && document.getElementById('password').value != '' && document.getElementById('cpassword').value != '' ) {
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('submit').disabled = false;
+    } else if (document.getElementById('password').value === '' || document.getElementById('cpassword').value === '' ){
+        document.getElementById('message').style.color = '';
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('submit').disabled = '';
+    } else if (document.getElementById('password').value !=
+        document.getElementById('cpassword').value){
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Password and confirm password not match ';
+        document.getElementById('submit').disabled = true;
+    } 
+}
+</script>
 </html>
