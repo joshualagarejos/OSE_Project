@@ -108,10 +108,19 @@ img{
         </tr>
         <tr class="trforgotpassword">
             <td><label for="password" ></label></td>
-            <td><a href="forgotpass.php" class="forgotpass">Forgot Password?</td>
+        </tr>
+        <tr class="trLoginType">
+            <td><label for="LoginType" ></label></td>
+            <td>
+                <select>
+                    <option>Student</option>
+                    <option>Admin</option>
+                </select>    
+            </td>
         </tr>
         </tbody>
     </table>
+    <td><a href="forgotpass.php" class="forgotpass">Forgot Password?</td>
 
     <div class="submit_button">
     <a href="homepage.php"><button type="button">Login</a></button>
