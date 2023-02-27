@@ -1,3 +1,7 @@
+<?php
+require_once('config.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -145,40 +149,47 @@ img{
     </div>
 
     <div class="details">
+    <?php
+        $sql = "SELECT * FROM usertable WHERE user_id = '".$_SESSION['user_id']."'";
+        $result = $con->query($sql);
+        if($result->num_rows>0){
+            while($fetch = $result->fetch_assoc()){
+    ?>
     <form action="grantees-portal.php" method="post">
     <table>
         <tbody>
         <tr class="">
             <th></th>
             <th><label for="lastname" class="lastnamelabel">Last Name:</label></th>
-            <th><input type="text" name="lastname" id="lastname" class="lastnameinput"></th>
+            <th><input type="text" name="lastname" id="lastname" class="lastnameinput" value="<?php echo $fetch['user_lastName'] ?>"></th>
             <th><label for="" class="statuslabel">Status:</label></th>
         </tr>
         <tr class="">
             <td><img class="unknown_user" src="unknown user.jpg"></td>
             <td><label for="firstname" class="firstnamelabel">First Name:</label></td>
-            <td><input type="text" name="firstname" id="firstname" class="firstnameinput"></td>
+            <td><input type="text" name="firstname" id="firstname" class="firstnameinput" value="<?php echo $fetch['user_firstName'] ?>"></td>
             <td><label for="" class="statuslabel1">ENROLLED</label></td>
         </tr>
         <tr class="">
             <td><label for="studentid" class="id">Student ID</label></td>
             <td><label for="bdate" class="birthdatelabel">Birth date:</label></td>
-            <td><input type="text" name="bdate" id="bdate" class="birthdateinput"></td>
-        </tr>
-        <tr class="">
-            <td><label for="address">Address:</label></td>
-            <td><input type="text" name="address" id="address" class="trinputaddress"></td>
+            <td><input type="text" name="bdate" id="bdate" class="birthdateinput" value="<?php echo $fetch['user_birthDate'] ?>"></td>
         </tr>
         <tr class="">
             <td><label for="cnumber">Contact Number:</label></td>
-            <td><input type="number" name="cnumber" id="cnumber"></td>
+            <td><input type="number" name="cnumber" id="cnumber" value="<?php echo $fetch['user_contactNumber'] ?>"></td>
         </tr>
         <tr class="">
             <td><label for="email">Email:</label></td>
-            <td><input type="text" name="email" id="email"></td>
+            <td><input type="text" name="email" id="email" value="<?php echo $fetch['user_email'] ?>"></td>
         </tr>
         </tbody>
     </table>
+
+    <?php
+            }
+        }
+    ?>
 
     <div class="back_button">
     <a href="homepage.php"><button type="button">Back</a></button>
