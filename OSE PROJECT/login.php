@@ -82,6 +82,8 @@ img{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -94,7 +96,7 @@ img{
     </div>
 
     <div class="main">
-    <form action="login.php" method="post">
+    <form action="process.php" method="POST">
 
     <table>
         <tbody>
@@ -114,7 +116,14 @@ img{
     </table>
 
     <div class="submit_button">
-    <a href="homepage.php"><button type="button">Login</a></button>
+    <button type="submit" name="sub" value="login">Submit</button>
     </div>
+    <?php
+if  (isset($_GET['event'])){
+    if ($_GET['event']==1){
+        echo "<script>swal('Login Failed', 'Incorrect email or password.', 'error');</script>";
+    }
+}
+?>
 </body>
 </html>
