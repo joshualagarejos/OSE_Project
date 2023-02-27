@@ -21,7 +21,7 @@ if(isset($_POST['sub'])){
         $result = $con->query($sql);
 
         if ($result->num_rows>0) {
-            header("Location: http://localhost/portal/registration.php?event=1");
+            header("Location: http://localhost/OSE_Project/OSE%20PROJECT/registration.php?event=1");
             die();
         }else{
             $sql = "INSERT INTO usertable VALUES (NULL, '".$email."', '".MD5($password)."', '".$fName."', '".$lName."', '".$dob."', '".$no."', NOW())";
@@ -49,7 +49,7 @@ if(isset($_POST['sub'])){
                 } else {
                     echo 'Message has been sent';
                 }
-                header("Location: http://localhost/portal/login.php");
+                header("Location: http://localhost/OSE_Project/OSE%20PROJECT/login.php");
                 die();
             } else {
             echo "Error: " . $sql . "<br>" . $con->error;
@@ -71,9 +71,9 @@ if(isset($_POST['sub'])){
             }
             $_SESSION['user_id'] = $user_id;
             
-            header("Location: http://localhost/portal/homepage.php");
+            header("Location: http://localhost/OSE_Project/OSE%20PROJECT/homepage.php");
         }else{
-            header("Location: http://localhost/portal/login.php?event=1");
+            header("Location: http://localhost/OSE_Project/OSE%20PROJECT/login.php?event=1");
             die();
         }
     }
