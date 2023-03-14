@@ -84,6 +84,13 @@ img{
 </head>
 
 <body>
+    <?php
+    
+        $mysqli = new mysqli('localhost','root','','osedb') or die(mysqli_error($mysqli));
+        $result = $mysqli->query("SELECT * FROM usertable") or die($mysqli->error);
+    
+    ?>
+
     <div class="homepage">
     <h1>Approval Request
         <div class="OSE_Logo">
@@ -94,41 +101,37 @@ img{
 
     <div class="main">
     <form action="requirement-viewing.php" method="post">
-    <table>
-        <tbody>
-        <tr>
-            <th>Academic Year</th>
-            <th>Term</th>
-            <th>Document Type</th>
-            <th>File Submission</th>
-            <th>Date Added</th>
-            <th>Status</th>
-            <th>Date Verified</th>
-            <th>Remarks</th>
-        </tr>
-        <tr class="submitfiles">
-            <td>2022-2023</td>
-            <td>2nd</td>
-            <td>Official Receipt</td>
-            <td><a href="requirement-submission.php" class="submitfilehref">Submit File Here</a></td>
-            <td>01-30-2023</td>
-            <td>Pending</td>
-            <td>02-02-2023</td>
-            <td></td>
-        </tr>
-        </tbody>
-        <tr class="submitfiles">
-            <td>2022-2023</td>
-            <td>2nd</td>
-            <td>Athlete's Contract</td>
-            <td><a href="requirement-submission.php" class="submitfilehref">Edit</a></td>
-            <td>12-15-2023</td>
-            <td>Approved</td>
-            <td>01-13-2023</td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Scholar / Grantee</th>
+                    <th>Submitted Requirements</th>
+                </tr>
+            </thead>
+        <?php
+            while($row = $result->fetch_assoc()):?>
+                <tr>
+                    <td><?php echo $row['user_id']?></td>
+                    <td><?php echo $row['user_firstName']?></td>
+                    <td><?php echo $row['user_lastName']?></td>
+                    <td><?php echo $row['user_FK_userType_id']?></td>
+                    <td><?php echo $row['user_FK_submittedRequirement_id']?></td>
+                    <td>
+                        <a href="">Approve</a>
+                    </td>
+                </tr>
+            
+
+
+            <?php endwhile; ?>
+        </table>
+    </div>
+    
 
     <div class="back_button">
     <a href="homepage.php"><button type="button">Back</a></button>

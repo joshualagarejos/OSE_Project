@@ -78,6 +78,12 @@ a{
 </head>
 
 <body>
+    <?php
+    
+        $mysqli = new mysqli('localhost','root','','osedb') or die(mysqli_error($mysqli));
+        $result = $mysqli->query("SELECT * FROM usertable") or die($mysqli->error);
+    
+    ?>
     <div class="register">
     <h1>Student List
         <div class="OSE_Logo">
@@ -87,6 +93,34 @@ a{
     </div>
 
     <div class="main">
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Scholar / Grantee</th>
+                </tr>
+            </thead>
+        <?php
+            while($row = $result->fetch_assoc()):?>
+                <tr>
+                    <td><?php echo $row['user_id']?></td>
+                    <td><?php echo $row['user_firstName']?></td>
+                    <td><?php echo $row['user_lastName']?></td>
+                    <td><?php echo $row['user_FK_userType_id']?></td>
+                    <td>
+                        <a href="">View Requirements</a>
+                    </td>
+                </tr>
+            
+
+
+            <?php endwhile; ?>
+        </table>
+    </div>
 
     <div class="back_button">
     <a href="homepage.php"><button type="button">Back</a></button>
