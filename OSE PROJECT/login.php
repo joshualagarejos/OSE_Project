@@ -1,3 +1,11 @@
+<?php
+session_start();
+$ses = 0;
+if (!empty($_SESSION)){
+	header("Location: http://localhost/OSE_Project/OSE%20PROJECT/homepage.php");
+	die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <style>

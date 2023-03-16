@@ -14,6 +14,9 @@ if(isset($_POST['sub'])){
         $fName = $_POST['firstname'];
         $no = $_POST['no'];
         $dob = $_POST['dob'];
+        $address = $_POST['address'];
+        $type_scho = $_POST['type_scho'];
+        $scho_percent = $_POST['scho_percent'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -24,7 +27,7 @@ if(isset($_POST['sub'])){
             header("Location: http://localhost/OSE_Project/OSE%20PROJECT/registration.php?event=1");
             die();
         }else{
-            $sql = "INSERT INTO usertable VALUES (NULL, '".$email."', '".MD5($password)."', '".$fName."', '".$lName."', '".$dob."', '".$no."', NOW())";
+            $sql = "INSERT INTO usertable VALUES (NULL, '".$email."', '".MD5($password)."', '".$fName."', '".$lName."', '".$dob."', '".$address."', '".$no."', '".$type_scho."', '".$scho_percent."', NOW())";
 
             if ($con->query($sql) === TRUE) {	  
                 //PHPMailer
@@ -77,6 +80,17 @@ if(isset($_POST['sub'])){
             die();
         }
     }
+
+}if(isset($_GET['type'])){
+    //logout
+    if($_GET['type'] == 'logout'){
+        session_start();
+        session_destroy();
+        header("Location: http://localhost/OSE_Project/OSE%20PROJECT/login.php");
+        die();
+    }
 }
+
+
 ?>
 

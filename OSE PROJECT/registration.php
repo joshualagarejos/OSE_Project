@@ -1,3 +1,11 @@
+<?php
+session_start();
+$ses = 0;
+if (!empty($_SESSION)){
+	header("Location: http://localhost/OSE_Project/OSE%20PROJECT/homepage.php");
+	die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -109,7 +117,19 @@ a{
         </tr>
         <tr class="trdob">
             <td><label for="dob">Date of Birth:</label></td>
-            <td><input required max="2016-06-06" type="date" name="dob" id="dob"></td>
+            <td><input required type="date" name="dob" id="dob"></td>
+        </tr>
+        <tr class="traddress">
+            <td><label for="dob">Address:</label></td>
+            <td><input required type="text" name="address" id="address"></td>
+        </tr>
+        <tr class="traddress">
+            <td><label for="dob">Type of Scholarship:</label></td>
+            <td><input required type="text" name="type_scho" id="type_scho"></td>
+        </tr>
+        <tr class="traddress">
+            <td><label for="dob">Scholarship Percentage:</label></td>
+            <td><input required type="number" max="100" name="scho_percent" id="scho_percent"></td>
         </tr>
         <tr class="tremail">
             <td><label for="email">Email:</label></td>
@@ -156,5 +176,15 @@ var checkPass = function() {
         document.getElementById('submit').disabled = true;
     } 
 }
+
+// min 16 dob
+var today = new Date();
+
+var minDate = new Date();
+minDate.setFullYear(today.getFullYear() - 17);
+
+var minDateStr = minDate.toISOString().slice(0,10);
+
+document.getElementById("dob").setAttribute("max", minDateStr);
 </script>
 </html>
