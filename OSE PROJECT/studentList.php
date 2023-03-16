@@ -110,7 +110,6 @@ a{
                     <td><?php echo $row['user_id']?></td>
                     <td><?php echo $row['user_firstName']?></td>
                     <td><?php echo $row['user_lastName']?></td>
-                    <td><?php echo $row['user_FK_userType_id']?></td>
                     <td>
                         <a href="">View Requirements</a>
                     </td>

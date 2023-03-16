@@ -91,7 +91,7 @@ a{
     <div class="register">
     <h1>Registration
         <div class="OSE_Logo">
-            <img src="OSE logo.jpg">
+            <a href="login.php"><img src="OSE logo.jpg"></a>
         </div>
     </h1>
     </div>

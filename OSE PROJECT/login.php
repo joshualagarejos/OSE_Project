@@ -76,6 +76,12 @@ a{
     margin-left: 100px;
     margin-top: 0px;
 }
+.registration{
+    font-style: italic;
+    color: #A4723A;
+    margin-left: 0px;
+    margin-top: 0px;
+}
 img{
     border-radius: 100px;
     width: 55px;
@@ -119,17 +125,9 @@ img{
         <tr class="trforgotpassword">
             <td><label for="password" ></label></td>
         </tr>
-        <tr class="trLoginType">
-            <td><label for="LoginType" ></label></td>
-            <td>
-                <select>
-                    <option>Student</option>
-                    <option>Admin</option>
-                </select>    
-            </td>
-        </tr>
         </tbody>
     </table>
+    <td><a href="registration.php" class="registration">Create a new account</td>
     <td><a href="forgotpass.php" class="forgotpass">Forgot Password?</td>
 
     <div class="submit_button">
