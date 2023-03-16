@@ -8,8 +8,20 @@ if (empty($_SESSION)){
 }else{
 	$ses = 1;
 }
-
 ?>
+
+<script>
+function enrollmentmessage() {
+   alert('You are being redirected to SIS in a new tab for Enrollment viewing.');
+}
+function schedulemessage() {
+   alert('You are being redirected to SIS in a new tab for Schedule viewing.');
+}
+function clearancemessage() {
+   alert('You are being redirected to SIS in a new tab for Clearance viewing.');
+}
+</script> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,19 +35,13 @@ if (empty($_SESSION)){
   <body>
     <div class="homepage">
       <h1>Homepage</h1>
-      <a href="enrollment-sis.php" class="link-cont"><span>Enrollment</span></a>
-      <a href="schedule-viewing.php" class="link-cont"><span>Schedule</span></a>
-      <a href="clearance-record.php" class="link-cont"
-        ><span>Clearance</span></a
-      >
-      <a href="requirement-viewing.php" class="link-cont"
-        ><span>View Requirements</span></a
-      >
+      <a onclick="enrollmentmessage()" href="http://apps.benilde.edu.ph/sis/" target="_blank" class="link-cont"><span>Enrollment</span></a>
+      <a onclick="schedulemessage()" href="http://apps.benilde.edu.ph/sis/" target="_blank" class="link-cont"><span>Schedule</span></a>
+      <a onclick="clearancemessage()" href="http://apps.benilde.edu.ph/sis/" target="_blank" class="link-cont"><span>Clearance</span></a>
+      <a href="requirement-viewing.php" class="link-cont"><span>View Requirements</span></a>
       <div class="logo">
-        <div class="dropdown">
-          <button class="dropbtn"><img src="OSE logo.jpg" /></button>
-          <div class="dropdown-content">
-            <a href="process.php?type=logout"><span class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</span></a>
+      <div class="logout"><img src="OSE logo.jpg"/></div>
+        <a href="process.php?type=logout"><span class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</span></a>
           </div>
         </div>
       </div>

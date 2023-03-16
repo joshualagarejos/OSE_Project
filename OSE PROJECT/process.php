@@ -43,8 +43,8 @@ if(isset($_POST['sub'])){
     
                 $mail->setFrom('OSE.landing@gmail.com', 'OSE Email Support');
                 $mail->addAddress($email, $fName.$lName);
-                $mail->Subject = 'Portal Registration';
-                $mail->Body = 'You are successfully registered to the portal.';
+                $mail->Subject = 'Welcome to the OSE Portal';
+                $mail->Body = 'Hi '.$fName.', this is an email confirmation that you have successfully registered in the OSE Portal. Thank you!';
     
                 if (!$mail->send()) {
                     echo 'Message could not be sent.';
