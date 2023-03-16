@@ -125,6 +125,15 @@ img{
         <tr class="trforgotpassword">
             <td><label for="password" ></label></td>
         </tr>
+        <tr class="trLoginType">
+            <td><label for="LoginType" ></label></td>
+            <td>
+                <select>
+                    <option>Student</option>
+                    <option>Admin</option>
+                </select>    
+            </td>
+        </tr>
         </tbody>
     </table>
     <td><a href="registration.php" class="registration">Create a new account</td>

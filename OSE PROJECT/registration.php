@@ -112,7 +112,7 @@ a{
             <td><input required type="text" name="firstname" id="firstname"></td>
         </tr>
         <tr class="trno">
-            <td><label for="no">Contact number Name:</label></td>
+            <td><label for="no">Contact number:</label></td>
             <td><input required type="text" pattern="\d*" maxlength="11" name="no" id="no"></td>
         </tr>
         <tr class="trdob">
