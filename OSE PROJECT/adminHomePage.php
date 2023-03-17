@@ -75,14 +75,13 @@ img{
 
 <body>
     <div class="homepage">
-    <h1>Homepage
+    <h1>Admin Homepage
         <div class="logo">
         <a href="homepage.php"><img src="OSE logo.jpg"></a>
         </div>
     </h1>
     </div>
     <div class="main">
-    <h2>Welcome, User <img class="unknown_user" src="unknown user.jpg"> </h2>
     <table>
         <tbody>
             <tr class="button1">
@@ -90,12 +89,6 @@ img{
                 ></a></button></th>
                 <th><a href="approvalRequest.php"><button type="button">Approval Request &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 ></a></button></th>
-            </tr>
-            <tr class="button2">
-                <td><a href="Activity.php"><button type="button">Activities/Announcement &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ></a></button></td>
-                <td><a href="schedule-viewing.php"><button type="button">Schedule &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ></a></button></td>
             </tr>
         </tbody>
     </table>

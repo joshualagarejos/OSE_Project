@@ -119,8 +119,8 @@ img{
                     <td><?php echo $row['user_id']?></td>
                     <td><?php echo $row['user_firstName']?></td>
                     <td><?php echo $row['user_lastName']?></td>
-                    <td><?php echo $row['user_FK_userType_id']?></td>
-                    <td><?php echo $row['user_FK_submittedRequirement_id']?></td>
+                    <td></td>
+                    <td></td>
                     <td>
                         <a href="">Approve</a>
                     </td>
@@ -134,7 +134,7 @@ img{
     
 
     <div class="back_button">
-    <a href="homepage.php"><button type="button">Back</a></button>
+    <a href="adminhomepage.php"><button type="button">Back</a></button>
     </div>
     </div>
 </body>
