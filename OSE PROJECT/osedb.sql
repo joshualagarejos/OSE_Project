@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2023 at 07:53 AM
+-- Generation Time: Mar 07, 2023 at 06:45 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,7 +34,10 @@ CREATE TABLE `usertable` (
   `user_firstName` varchar(30) NOT NULL,
   `user_lastName` varchar(30) NOT NULL,
   `user_birthDate` date NOT NULL,
+  `user_address` varchar(255) NOT NULL,
   `user_contactNumber` varchar(12) NOT NULL,
+  `type_scholarship` varchar(40) NOT NULL,
+  `scholar_percentage` varchar(12) NOT NULL,
   `user_registrationDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,8 +45,9 @@ CREATE TABLE `usertable` (
 -- Dumping data for table `usertable`
 --
 
-INSERT INTO `usertable` (`user_id`, `user_email`, `user_password`, `user_firstName`, `user_lastName`, `user_birthDate`, `user_contactNumber`, `user_registrationDate`) VALUES
-(2, 'paganahinutak@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'Ace', 'Wolfgang', '2002-06-05', '09123456789', '2023-02-25 11:36:21');
+INSERT INTO `usertable` (`user_id`, `user_email`, `user_password`, `user_firstName`, `user_lastName`, `user_birthDate`, `user_address`, `user_contactNumber`, `type_scholarship`, `scholar_percentage`, `user_registrationDate`) VALUES
+(1002, 'paganahinutak@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'Ace', 'Wolfgang', '2002-06-05', 'Jakarta, Indonesia', '09123456789', 'Athlete Scholarship', '100', '2023-02-25 11:36:21'),
+(1003, 'arcelle.penaflor@benilde.edu.ph', 'cc03e747a6afbbcbf8be7668acfebee5', 'Arcelle', 'Penaflor', '2000-12-30', 'San Pedro, Laguna', '09123456789', 'Athletic Scholarship', '100', '2023-03-07 08:28:06');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +67,7 @@ ALTER TABLE `usertable`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

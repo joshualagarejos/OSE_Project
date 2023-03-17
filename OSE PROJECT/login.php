@@ -1,3 +1,11 @@
+<?php
+session_start();
+$ses = 0;
+if (!empty($_SESSION)){
+	header("Location: http://localhost/OSE_Project/OSE%20PROJECT/homepage.php");
+	die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -68,6 +76,12 @@ a{
     margin-left: 100px;
     margin-top: 0px;
 }
+.registration{
+    font-style: italic;
+    color: #A4723A;
+    margin-left: 0px;
+    margin-top: 0px;
+}
 img{
     border-radius: 100px;
     width: 55px;
@@ -122,6 +136,7 @@ img{
         </tr>
         </tbody>
     </table>
+    <td><a href="registration.php" class="registration">Create a new account</td>
     <td><a href="forgotpass.php" class="forgotpass">Forgot Password?</td>
 
     <div class="submit_button">
