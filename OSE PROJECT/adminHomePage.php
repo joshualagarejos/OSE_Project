@@ -77,7 +77,7 @@ img{
     <div class="homepage">
     <h1>Admin Homepage
         <div class="logo">
-        <a href="homepage.php"><img src="OSE logo.jpg"></a>
+        <a href="adminhomepage.php"><img src="OSE logo.jpg"></a>
         </div>
     </h1>
     </div>
