@@ -1,5 +1,5 @@
 <?php 
-include('db_connect.php');
+include('config.php');
 if(isset($_GET['id'])){
 $qry = $conn->query("SELECT * FROM files where id=".$_GET['id']);
 	if($qry->num_rows > 0){

@@ -1,5 +1,5 @@
 <?php 
-include 'db_connect.php';
+include 'config.php';
 $qry = $conn->query("SELECT * FROM files where id=".$_GET['id'])->fetch_array();
 
 extract($_POST);
